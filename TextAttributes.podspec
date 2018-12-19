@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name         = "TextAttributes"
   s.version      = "2.0"
   s.license      = { :type => "MIT" }
-  s.homepage     = "https://github.com/delba/TextAttributes"
+  s.homepage     = "https://github.com/CampGladiator/TextAttributes.git"
   s.author       = { "Damien" => "damien@delba.io" }
   s.summary      = "An easier way to compose attributed strings"
   s.source       = { :git => "https://github.com/CampGladiator/TextAttributes.git", :tag => "v2.0" }
