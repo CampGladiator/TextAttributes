@@ -23,17 +23,18 @@
 //
 
 #if os(OSX)
-    public typealias Font  = NSFont
+    public typealias Font = NSFont
     public typealias Color = NSColor
     public typealias Image = NSImage
-    
+
     extension NSColor {
         public convenience init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
             self.init(srgbRed: red, green: green, blue: blue, alpha: alpha)
         }
     }
+
 #else
-    public typealias Font  = UIFont
+    public typealias Font = UIFont
     public typealias Color = UIColor
     public typealias Image = UIImage
 #endif
@@ -42,7 +43,7 @@ extension NSRange {
     init(_ range: Range<Int>) {
         self = NSRange(location: range.lowerBound, length: range.count)
     }
-    
+
     init(_ string: NSString) {
         self = NSRange(location: 0, length: string.length)
     }
@@ -51,28 +52,28 @@ extension NSRange {
 extension NSMutableParagraphStyle {
     func clone() -> NSMutableParagraphStyle {
         let clone = NSMutableParagraphStyle()
-        
+
         if #available(iOS 9.0, *) {
             clone.setParagraphStyle(self)
         } else {
             clone.cloneParagraphStyle(self)
         }
-        
+
         return clone
     }
-    
+
     fileprivate func cloneParagraphStyle(_ other: NSMutableParagraphStyle) {
-        alignment              = other.alignment
-        firstLineHeadIndent    = other.firstLineHeadIndent
-        headIndent             = other.headIndent
-        tailIndent             = other.tailIndent
-        lineBreakMode          = other.lineBreakMode
-        maximumLineHeight      = other.maximumLineHeight
-        minimumLineHeight      = other.minimumLineHeight
-        lineSpacing            = other.lineSpacing
-        paragraphSpacing       = other.paragraphSpacing
+        alignment = other.alignment
+        firstLineHeadIndent = other.firstLineHeadIndent
+        headIndent = other.headIndent
+        tailIndent = other.tailIndent
+        lineBreakMode = other.lineBreakMode
+        maximumLineHeight = other.maximumLineHeight
+        minimumLineHeight = other.minimumLineHeight
+        lineSpacing = other.lineSpacing
+        paragraphSpacing = other.paragraphSpacing
         paragraphSpacingBefore = other.paragraphSpacingBefore
-        baseWritingDirection   = other.baseWritingDirection
-        lineHeightMultiple     = other.lineHeightMultiple
+        baseWritingDirection = other.baseWritingDirection
+        lineHeightMultiple = other.lineHeightMultiple
     }
 }
